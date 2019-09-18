@@ -5,11 +5,12 @@ import { DatePipe } from '@angular/common';
   selector: '[appDate]'
 })
 export class DateDirective implements OnInit {
-  // datum = new Date().toISOString().slice(0, 16);
-
   constructor(private el: ElementRef, private datePipe: DatePipe) {}
 
   ngOnInit() {
-    this.el.nativeElement.value = this.datePipe.transform(new Date(), 'yyyy-MM-dd');
+    this.el.nativeElement.value = this.datePipe.transform(
+      new Date(),
+      'yyyy-MM-dd'
+    );
   }
 }
